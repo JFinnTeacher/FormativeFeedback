@@ -1,5 +1,7 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
+from gui.category_manager import CategoryManager
+from gui.feedback_template_manager import FeedbackTemplateManager
 
 class MainWindow:
     def __init__(self, master):
@@ -48,7 +50,7 @@ class MainWindow:
         self.feedback_text.insert(tk.END, "[Generated feedback will appear here]")
 
     def open_feedback_editor(self):
-        messagebox.showinfo("Edit Feedback Templates", "This will open the feedback template editor.")
+        FeedbackTemplateManager(self.master)
 
     def open_category_manager(self):
-        messagebox.showinfo("Edit Categories/Scales", "This will open the category/scale manager.") 
+        CategoryManager(self.master) 
